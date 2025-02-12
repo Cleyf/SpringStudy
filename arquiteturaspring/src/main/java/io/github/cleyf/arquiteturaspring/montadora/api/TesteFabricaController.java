@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/carros")
 public class TesteFabricaController {
     @Autowired
-    @Qualifier("motorTurbo")
+    //@Qualifier("motorTurbo")
+    @Turbo
     private Motor motor;
 
     @PostMapping

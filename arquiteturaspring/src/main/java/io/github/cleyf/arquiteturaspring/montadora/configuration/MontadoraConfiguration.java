@@ -4,10 +4,12 @@ import io.github.cleyf.arquiteturaspring.montadora.Motor;
 import io.github.cleyf.arquiteturaspring.montadora.TipoMotor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class MontadoraConfiguration {
     @Bean(name = "motorAspirado")
+    @Primary // anotação para quando não houver qualifier e mais de um bean ele utiliza esse por padrão
     public Motor motorAspirado() {
         var motor = new Motor();
         motor.setCavalos(120);
