@@ -3,6 +3,7 @@ package io.github.cleyf.libraryapi.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Table(name = "autor", schema = "public")
 @Getter
 @Setter
+@ToString
 public class Autor {
     @Id
     @Column(name = "id")
@@ -30,4 +32,8 @@ public class Autor {
     @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
 
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
